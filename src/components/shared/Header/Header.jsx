@@ -23,7 +23,7 @@ const Header = () => {
           <img src={logo} alt="Logo" />
         </div>
         <button onClick={signIN} className="px-7 py-2 bg-primary-dark shadow-md rounded text-white transition-all hover:bg-accent-dark active:shadow-sm">
-          {user? `${user.email}-SIGN OUT` : `SIGN IN`}
+          {user? `SIGN OUT` : `SIGN IN`}
         </button>
       </nav>
     </header>
