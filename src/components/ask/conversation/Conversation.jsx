@@ -58,9 +58,8 @@ const ConvCard = ({ source, text}) => {
 
 const  sendMessage = async (text) => {
     let message;
-    // const res = await axios.post("https://stopam.onrender.com/input", {message: text})
-    console.log(text);
-    const res = await axios.post("http://localhost:4000/input", {message: text})
+    const res = await axios.post("https://stopam.onrender.com/input", {message: text})
+    // const res = await axios.post("http://localhost:4000/input", {message: text})
     message = res.data.message;
     return message;
 }
