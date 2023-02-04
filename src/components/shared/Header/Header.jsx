@@ -6,7 +6,7 @@ import { loginWithGoogle } from "../../../firebase/firebase";
 
 import logo from './StopAm.svg';
 
-
+ 
 const Header = () => {
 
   const user= useUser();
