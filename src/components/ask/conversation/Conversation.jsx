@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ChatGPTAPI } from 'chatgpt';
+import { ChatGPTAPI } from 'chatgpt'; 
 import { useState } from 'react';
 
 
