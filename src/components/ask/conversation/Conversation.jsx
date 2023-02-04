@@ -1,12 +1,6 @@
 import React from 'react'
 
-import { ChatGPTAPI } from 'chatgpt'; 
 import { useState } from 'react';
-
-
-const chat = new ChatGPTAPI({
-    apiKey: "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"
-})
 
 
 const mega = `You are Law Buddy, an AI who is extremely skilled and knowlegable about Cameroonian Law and can answer questions or give feedback on analysis about Law within the context of Cameroon.
@@ -88,16 +82,11 @@ const ConvCard = ({ source, text}) => {
  
 
 const  sendMessage = async ({text}) => {
-    const convID = localStorage.getItem("conversation_id");
-    const parentId = localStorage.getItem("parent_id");
     let message;
     if(!convID){
         const res = await chat.sendMessage(`\n Your First Prompt is: ${text}`, {
             promptPrefix: mega
         }); 
-        localStorage.setItem("conversation_id", res.conversationId);
-        localStorage.setItem("parent_id", res.id);
-        message = res.text;
     }
     else{
         const res = await chat.sendMessage(text, {
