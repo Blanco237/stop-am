@@ -34,7 +34,7 @@ const Conversation = () => {
             )
         }
         <form onSubmit={handleSubmit} className='w-full flex justify-center items-center'>
-            <input type={'text'} value={query} onChange={(e) => setQuery(e.target.value.trim())}  placeholder={'Enter Query'}  className="w-[65%] px-3 py-4 rounded shadow focus:outline-primary-green"/> 
+            <input type={'text'} value={query} onChange={(e) => setQuery(e.target.value)}  placeholder={'Enter Query'}  className="w-[65%] px-3 py-4 rounded shadow focus:outline-primary-green"/> 
         </form>
     </section>
   )
@@ -56,9 +56,11 @@ const ConvCard = ({ source, text}) => {
 }
  
 
-const  sendMessage = async ({text}) => {
+const  sendMessage = async (text) => {
     let message;
-    const res = await axios.post("https://stopam.onrender.com/input", {message: text})
+    // const res = await axios.post("https://stopam.onrender.com/input", {message: text})
+    console.log(text);
+    const res = await axios.post("http://localhost:4000/input", {message: text})
     message = res.data.message;
     return message;
 }
